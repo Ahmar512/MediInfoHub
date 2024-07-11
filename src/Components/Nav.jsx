@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { navLinks } from "../Constant";
 import MenuIcon from '@mui/icons-material/Menu';
+
 function Nav(){
+    const [flag, setFlag] = useState(false);
+    function handleClick(){
+        setFlag(preValue => !preValue);
+    }
     return (
-        <header className="px-10 py-8 w-full absolute z-10 max-sm:pl-4">
+        <header className="px-10 py-8 w-full absolute  z-10 max-sm:pl-4">
             <nav className="flex  justify-between items-center max-container">
                 <a href="/"><h1 className="font-palanquin font-bold text-2xl">MediInfoHub</h1></a>
                 <ul className="flex-1 flex justify-center items-center gap-16 max-lg:hidden">
@@ -13,10 +18,19 @@ function Nav(){
                         </li>
                     ))}
                 </ul>
-                <div className="flex lg:hidden border-[1px] border-slate-gray w-[40px] h-[40px] justify-center items-center rounded-lg">
+                <div onClick={handleClick} className="flex lg:hidden border-[1px] border-slate-gray w-[40px] h-[40px] justify-center items-center rounded-lg">
                     <MenuIcon />
                 </div>
             </nav>
+            {flag ?<div data-aos="fade-left" className="text-center flex lg:hidden  justify-end">
+                <ul className="bg-white w-full sm:w-[250px] border-2 border-slate-gray rounded-2xl">
+                {navLinks.map((link)=>(
+                        <li key={link.label} className="p-2 ">
+                            <a href={link.href} className="text-slate-gray font-montserrat">{link.label}</a>
+                        </li>
+                    ))}
+                </ul>
+            </div> : null}
         </header>
     );
 }

@@ -9,7 +9,7 @@ function App() {
   return (
     <main>
       <Nav />
-      <section data-aos="fade-in" className='w-full px-10 py-10 max-sm:px-2 pb-5'>
+      <section className='w-full px-10 py-10 max-sm:px-2 pb-5'>
         <Hero />
       </section>
       <section>
