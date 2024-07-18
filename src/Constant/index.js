@@ -14,19 +14,19 @@ export const features = [
         imgURL: drugData,
         label: "Comprehensive Drug Data",
         content: "Provides detailed information on a wide range of drugs, including uses, side effects, dosages, and interactions.",
-        anime: "fade-right"
+        
     },
     {
         imgURL: priceHistory,
         label: "Price History Tracking",
         content: "Offers historical price data for medications, helping users understand price trends over time.",
-        anime: "fade-up"
+        
     },
     {
         imgURL: searchFilter,
         label: "Search and Filter Capabilities",
         content: "Allows users to search for specific drugs and filter results based on various criteria, making it easier to find relevant information.",
-        anime: "fade-left"
+        
     }
 
 ];
